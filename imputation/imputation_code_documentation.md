@@ -13,3 +13,13 @@ Based on the results in the paper \[2\] we embed the three best imputation metho
 In the paper, Mean-Mode has the best performance to training cost trade-off, denoise auto-encoders are the best method for real-world missing data, while MissForest is the best for simultated missing data.
 
 \[2\] Paterakis G., Fafalios S., Charonyktakis P., Christophides V., Tsamardinos I. Do we really need imputation in AutoML predictive modeling? Under Submission
+
+Input:
+
+1.  Features in dataframe format
+2.  Outcome variable in series format
+3.  Training time in minutes
+
+Output:
+
+1\. the dataset with imputed values in pandas dataframe format.
