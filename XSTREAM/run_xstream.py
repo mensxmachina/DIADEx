@@ -47,10 +47,11 @@ def run_xstream(folder_path, filename, results_path):
 
 
 def run_xstream_on_multiple_datasets(folder_path='datasets/', results_path='Results/'):
-    folder_path = 'datasets/'  # Replace with the path to your folder
-    results_path = 'Results/'
+    folder_path = 'XSTREAM/datasets/'  # Replace with the path to your folder
+    results_path = 'XSTREAM/Results/'
     # Iterate over .csv files in the folder
     for file_path in glob.glob(os.path.join(folder_path, '*.csv')):
+        print(file_path)
         # Extract the base filename without extension
         filename = os.path.splitext(os.path.basename(file_path))[0]
 

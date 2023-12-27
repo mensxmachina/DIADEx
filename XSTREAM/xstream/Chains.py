@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import itertools
-from StreamhashProjection import StreamhashProjection
+from .StreamhashProjection import StreamhashProjection
 import numpy as np
 import tqdm
 tqdm.tqdm.monitor_interval = 0
@@ -17,7 +17,7 @@ class Chain:
         self.shift = np.random.rand(k) * deltamax
 
     def fit(self, X, verbose=False, update=False):
-        prebins = np.zeros(X.shape, dtype=np.float)
+        prebins = np.zeros(X.shape, dtype=np.float64)
         depthcount = np.zeros(len(self.deltamax), dtype=np.int)
         for depth in range(self.depth):
             f = self.fs[depth]
@@ -42,7 +42,7 @@ class Chain:
 
     def bincount(self, X):
         scores = np.zeros((X.shape[0], self.depth))
-        prebins = np.zeros(X.shape, dtype=np.float)
+        prebins = np.zeros(X.shape, dtype=np.float64)
         depthcount = np.zeros(len(self.deltamax), dtype=np.int)
         for depth in range(self.depth):
             f = self.fs[depth] 
