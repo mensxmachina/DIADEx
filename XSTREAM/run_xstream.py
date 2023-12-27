@@ -46,7 +46,7 @@ def run_xstream(folder_path, filename, results_path):
     data.to_csv(results_path+filename+'_updated.csv')
 
 
-def main():
+def run_xstream_on_multiple_datasets(folder_path='datasets/', results_path='Results/'):
     folder_path = 'datasets/'  # Replace with the path to your folder
     results_path = 'Results/'
     # Iterate over .csv files in the folder
@@ -56,6 +56,3 @@ def main():
 
         # Run your function on the filename
         run_xstream(folder_path, filename, results_path)
-
-if __name__ == "__main__":
-    main()
