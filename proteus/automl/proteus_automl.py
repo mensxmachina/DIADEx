@@ -66,7 +66,6 @@ class ProteusAutoML(BaseAutoML):
         assert 0 < self.partitions < X.shape[0], f'partitions must be 0 < partitions < {X.shape[0]}'
 
         self.anomaly_ratio = sum(y) / len(y)
-
         best_clf, best_fsel, perf, predictions_mat = \
             self.__cv(X, y, anomaly_scores, self.classifiers, self.feature_selectors, self.perf_metric_func)
         X, _ = self.__standardize_arrays(X)
@@ -94,6 +93,7 @@ class ProteusAutoML(BaseAutoML):
         predictions_mat = pd.DataFrame(np.full((num_samples, len(learning_methods)), np.NaN))
         splitter = StratifiedKFold(n_splits=self.partitions, shuffle=True)
         for train_ids, test_ids in splitter.split(X, y):
+            print(train_ids)
             X_train, X_test = self.__standardize_arrays(X.loc[train_ids], X.loc[test_ids])
             y_train, y_test = y[train_ids], y[test_ids]
             # apply oversampling

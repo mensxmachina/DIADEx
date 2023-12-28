@@ -1,7 +1,7 @@
 import pandas as pd
 from typing import List, Any
 from proteus.automl import BaseAutoML
-from proteus.visualization import spider_plot
+#from proteus.visualization import spider_plot
 
 
 class ProteusExplainer:
@@ -49,7 +49,7 @@ class ProteusExplainer:
         if explanation_features is None:
             explanation_features = self.automl.explanation
         explanation_features = list(map(type(X.columns[0]), list(explanation_features)))
-        spider_plot(
+        """spider_plot(
             sample_ids_to_plot=sample_ids,
             X=X.loc[:, explanation_features]
-        )
+        )"""

@@ -6,7 +6,7 @@ from typing import Optional
 from pprint import pprint
 import autosklearn.classification
 from sklearn.impute import SimpleImputer
-from imputation_code.dae import DAE
+from imputation.imputation_code.dae import DAE
 from ConfigSpace.hyperparameters import (
     UniformIntegerHyperparameter,
     CategoricalHyperparameter,
