@@ -74,7 +74,19 @@ The models and output CSV files are named systematically to correspond with thei
 
 PROTEUS is an anomaly explanation sytem to produce global, predictive explanations for any detector as input.
 
-PROTEUS is a novel AutoML engine specifically designed to support feature selection and classification on imbalanced datasets. Unlike existing anomaly explainers, PROTEUS outputs not only a small-sized feature subset serving as explanation but also a surrogate model fitted on this subset to explain unseen samples, as well as a reliable out-of-sample (predictive) performance estimation. To produce such output, PROTEUS AutoML relies on advanced design choices described in Section 3, such as supervised oversampling, group-based stratification, and a special variant of Cross-Validation with Bootstrap Bias Correction. Finally, PROTEUS introduces a novel visualization mechnanism inspired by spider plots, to facilitate the analyst into examing a detected anomaly.
+PROTEUS is a novel AutoML engine specifically designed to support feature selection and classification on imbalanced datasets. Unlike existing anomaly explainers, PROTEUS outputs not only a small-sized feature subset serving as explanation but also a surrogate model fitted on this subset to explain unseen samples, as well as a reliable out-of-sample (predictive) performance estimation. To produce such output, PROTEUS AutoML relies on advanced design choices such as supervised oversampling, group-based stratification, and a special variant of Cross-Validation with Bootstrap Bias Correction. Finally, PROTEUS introduces a novel visualization mechnanism inspired by spider plots, to facilitate the analyst into examing a detected anomaly.
+
+### Input
+
+- Detector's scoring function
+- An oversampler (Proteus default)
+- A list of classifiers
+- A list of feature selectors
+
+### Output
+- The best model that approximates the given detector
+- The global explanation features to separate anomalies from normal samples
+- The approximation quality of the constructed model to detector's decision boundary
 
 More information can be found in the papers:
 
